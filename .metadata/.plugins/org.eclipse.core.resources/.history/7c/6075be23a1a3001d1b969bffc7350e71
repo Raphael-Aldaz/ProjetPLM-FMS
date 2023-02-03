@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Planes {
+
+	public static void displayPlanes(ArrayList<String[]> tab) {
+		for(int i =0; i<tab.size(); i++) {
+			System.out.println("---------");
+			System.out.println(Arrays.toString(tab.get(i)));
+		}
+	}
+	
+	public static ArrayList<String[]> displayPlaneByKey(ArrayList<String[]> tab, String value, int key) {
+		ArrayList<String[]> res = new ArrayList<>();
+		for(int i = 0; i < tab.size(); i++) {
+			String a = tab.get(i)[key-1].toUpperCase();
+			if(a.contains(value.toUpperCase())) {
+				res.add(tab.get(i));
+			}
+		}
+		return res;	
+	}
+	public static HashMap<String, HashMap<Integer, String[]>> addPieceToPlane(ArrayList<String[]> plane,HashMap<Integer, String[]> piece, int index){
+		HashMap<String , HashMap<Integer, String[]>> planeWithePiece = new HashMap<>();
+		planeWithePiece.put(plane.get(0)[index], piece);
+		
+		return planeWithePiece ;
+		
+		
+	}
+	public static void displayPLaneByPiece(HashMap<String, HashMap<Integer, String[]>> tab) {
+
+		 for (Map.Entry<String	, HashMap<Integer, String[]>> entry : tab.entrySet()) {
+	            String key = entry.getKey();
+	            
+	            String value = entry.getValue();
+	            System.out.println("ID: " + key + " : " + value);
+	        }		
+	}
+	
+	}
+

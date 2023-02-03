@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Planes {
+
+	public static void displayPlanes(ArrayList<String[]> tab) {
+		for(int i =0; i<tab.size(); i++) {
+			System.out.println("---------");
+			System.out.println(Arrays.toString(tab.get(i)));
+		}
+	}
+	
+	public static ArrayList<String[]> displayPlaneByKey(ArrayList<String[]> tab, String value, int key) {
+		ArrayList<String[]> res = new ArrayList<>();
+		for(int i = 0; i < tab.size(); i++) {
+			String a = tab.get(i)[key-1].toUpperCase();
+			if(a.contains(value.toUpperCase())) {
+				res.add(tab.get(i));
+			}
+		}
+		return res;	
+	}
+	}
+

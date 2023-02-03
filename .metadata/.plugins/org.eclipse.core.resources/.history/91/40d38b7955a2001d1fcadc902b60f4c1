@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+
+public class Pieces {
+	/*public static void displayPieces(ArrayList<String[]> tab) {
+		for(int i =0; i<tab.size(); i++) {
+			System.out.println("---------");
+			
+		}
+		
+	
+	}*/
+	public static void displayPieces(HashMap<Integer, ArrayList<String[]>> tab) {
+		//System.out.println(tab.keySet());
+		for(int i = 1; i <=tab.size();i++) {
+			System.out.println(tab. + " "+ Arrays.toString(tab.get(i).get(i-1)));	
+		
+			  
+			}
+	}
+	
+	public static ArrayList<String[]> removePiece(ArrayList<String[]> tab, int index){
+		
+		 tab.remove(index - 1);
+		return tab;
+	}
+public static ArrayList<String[]> addPiece(ArrayList<String[]> tab, int index){
+		
+		tab.remove(index - 1);
+		ArrayList<String[]> listUpdated = new ArrayList<>(tab);
+		
+		return listUpdated;
+	}
+	
+	
+	
+
+}

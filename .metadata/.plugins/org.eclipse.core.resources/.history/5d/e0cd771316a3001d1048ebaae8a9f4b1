@@ -1,0 +1,70 @@
+import java.util.ArrayList;
+
+import java.util.HashMap;
+
+public class Data {
+public static ArrayList<String[]> dataPlane (){
+	String [] program = {"A320", "A330", "A350","A380","A400M"};
+	String [] phase = {"Etude de faisabilité", "Conception", "Définition","Construction","En service", "Cloturé"};
+	String [] type = {"Fret", "Transport passager", "Militaire","Avions d'affaires"};
+	
+	ArrayList<String[]> listPlane = new ArrayList<String[]>();
+	
+	
+	String[][] planes = {
+							{"",program[0], phase[5],type[0]},
+							{"",program[1], phase[5],type[3]},
+							{"",program[2], phase[2],type[1]},
+							{"",program[3], phase[3],type[1]},
+							{"",program[4], phase[1],type[2]},
+							}; 
+	for(int i =0; i < planes.length; i++) {
+		String key = Integer.toString(i+1);
+		planes[i][0] = key;
+		listPlane.add(planes[i]);
+	}
+	
+	return listPlane;
+}
+
+public static HashMap<Integer ,String[]> dataPieces(){
+	String[] pieceName = {"piece1", "piece2", "piece3","piece4","piece5","piece6","piece7","piece8","piece9"};
+	String[]category = {"Electricity", "Composites", "Sheet metal", "Tubing","Door", "Wheels"};
+	String[] price = {"152 000", "14 300", "99 000","9494 925","845 694","84 843","518 793","45 475","77 469"};
+	
+	HashMap<Integer, String[]> listPieces = new HashMap<>();
+	ArrayList<String[]> test = new ArrayList<String[]>();
+	
+	String[][] pieces = {
+							{pieceName[0], category[5],price[0]+ "€"},
+							{pieceName[1], category[5],price[3]+ "€"},
+							{pieceName[2], category[2],price[1]+ "€"},
+							{pieceName[3], category[3],price[1]+ "€"},
+							{pieceName[4], category[1],price[2]+ "€"},
+							{pieceName[5], category[0],price[8]+ "€"},
+							{pieceName[6], category[4],price[5]+ "€"},
+							{pieceName[7], category[3],price[6]+ "€"},
+							{pieceName[8], category[1],price[4] + "€"},
+							
+						};
+	
+	for(int i =0; i < pieces.length; i++) {
+		
+		test.add(pieces[i]);
+		
+	}
+	for(int i =0; i < pieces.length; i++) {
+		listPieces.put(i +1 ,pieces[i]);
+		//String key = Integer.toString(i+1);
+		//pieces[i][0] = key;
+		//listPieces.add(pieces[i]);
+		
+	}
+	
+	return listPieces;
+	
+	
+};
+
+
+}

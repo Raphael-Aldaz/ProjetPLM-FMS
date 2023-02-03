@@ -1,0 +1,81 @@
+HashMap<Integer, String[]> listPieces = new HashMap<>(Data.dataPieces());
+			System.out.println("Vouslez vous ajouter ou supprimer une piece ? ");
+			System.out.println("1 - Ajouter");
+			System.out.println("2 - Supprimer");
+			System.out.println("3 - Supprimer");
+			System.out.println("4 - Supprimer");
+			System.out.println("5 - Précedent");
+			while(scan.hasNextInt() == false ) scan.next();
+			int choicePieces = scan.nextInt();
+			
+			while(choicePieces <5 && choicePieces >0) {
+				if(choicePieces == 1) {
+					scan.nextLine();
+					System.out.println("Entrez le nom de la piece");
+					String namePiece = scan.nextLine();
+					System.out.println("Choisissez la catégorie de la piece \n"
+							+"1 - Electricity\n"
+							+"2 - Composites\n"
+							+"3 - Metal Sheet\n"
+							+"4 - Tubing\n"
+							+"5 - Door\n"
+							+"6 - Wheels\n"
+							);
+					int categoryPiece = scan.nextInt();
+					System.out.println("Entrez le prix de la piece");
+					int pricePiece = scan.nextInt();
+					
+					System.out.println("Voulez vous ajouter cette piece ? o/n \n"
+							+namePiece + " | " +  Data.getDataPieces()[1][categoryPiece -1] + " | " + pricePiece + "€"
+							);
+					String addPiece = scan.next();
+					if(addPiece.equals("o")) {
+						listPieces = Pieces.addPiece(listPieces, namePiece, categoryPiece, pricePiece);
+						Pieces.displayPieces(listPieces);
+						System.out.println("Piece ajouté ");
+						System.out.println("Vouslez vous ajouter ou supprimer une piece ? ");
+						System.out.println("1 - Ajouter");
+						System.out.println("2 - Supprimer");
+						System.out.println("3 - Précedent");
+						choicePieces = scan.nextInt();
+					} else if(addPiece.equals("n")) {
+						System.out.println("Vouslez vous ajouter ou supprimer une piece ? ");
+						System.out.println("1 - Ajouter");
+						System.out.println("2 - Supprimer");
+						System.out.println("3 - Précedent");
+						choicePieces = scan.nextInt();
+					}
+					
+				} else if(choicePieces == 2) {
+					
+					Pieces.displayPieces(listPieces);
+					System.out.println("Indiquer l'ID de la piece que vous souhaitez  supprimer ? ");
+					int pieceToDelete = scan.nextInt();
+					listPieces = Pieces.removePiece(listPieces,pieceToDelete );
+					Pieces.displayPieces(listPieces); 
+					System.out.println("Piece supprimé avec succés !");
+					System.out.println("Vous lez vous en supprimer une autre ? o/n");
+					String delete = scan.next();
+					while(delete.equals("o")) {
+						System.out.println("Indiquer l'ID de la piece que vous souhaitez  supprimer ? ");
+						pieceToDelete = scan.nextInt();
+						listPieces = Pieces.removePiece(listPieces, pieceToDelete);
+						Pieces.displayPieces(listPieces);
+						System.out.println("Piece supprimé avec succés !");
+						System.out.println("Vouslez vous en supprimer une autre ? o/n");
+						delete = scan.next();
+					}
+					/*System.out.println("Vouslez vous ajouter ou supprimer une piece ? ");
+					System.out.println("1 - Ajouter");
+					System.out.println("2 - Supprimer");
+					System.out.println("3 - Précedent");
+					choicePieces = scan.nextInt();*/
+					displayMenu();
+					choice = scan.nextInt();
+			} else if(choicePieces == 5) {
+				displayMenu();
+				choice = scan.nextInt();
+				
+			}
+			break;
+		}

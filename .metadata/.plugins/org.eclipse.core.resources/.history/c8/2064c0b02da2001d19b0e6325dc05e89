@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+
+public class Data {
+public static ArrayList<String[]> dataPlane (){
+	String [] program = {"A320", "A330", "A350","A380","A400M"};
+	String [] phase = {"Etude de faisabilité", "Conception", "Définition","Construction","En service", "Cloturé"};
+	String [] type = {"Fret", "Transport passager", "Militaire","Avions d'affaires"};
+	
+	ArrayList<String[]> listPlane = new ArrayList<String[]>();
+	
+	
+	String[][] planes = {
+							{"",program[0], phase[5],type[0]},
+							{"",program[1], phase[5],type[3]},
+							{"",program[2], phase[2],type[1]},
+							{"",program[3], phase[3],type[1]},
+							{"",program[4], phase[1],type[2]},
+							}; 
+	for(int i =0; i < planes.length; i++) {
+		String key = Integer.toString(i+1);
+		planes[i][0] = key;
+		listPlane.add(planes[i]);
+	}
+	
+	return listPlane;
+}
+
+public static ArrayList<String[]> dataPieces(){
+	String[] pieceName = {"piece1", "piece2", "piece3","piece4","piece5","piece6","piece7","piece8","piece9"};
+	String[]category = {"Electricity", "Composites", "Sheet metal", "Tubing","Door", "Wheels"};
+	String[] price = {"152000", "14300", "99000","9494925","8455694","84843","518793","45475","77469"};
+	
+	ArrayList<String[]> listPieces = new ArrayList<String[]>();
+	
+	
+};
+
+
+}

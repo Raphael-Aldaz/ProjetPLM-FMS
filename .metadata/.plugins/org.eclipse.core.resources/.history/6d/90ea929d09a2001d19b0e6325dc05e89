@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+
+public class Data {
+public static ArrayList<String[]> dataPlane (){
+	String [] program = {"A320", "A330", "A350","A380","A400M"};
+	String [] phase = {"Etude de faisabilité", "Conception", "Définition","Construction","En service", "Cloturé"};
+	String [] type = {"Fret", "Transport passager", "Militaire","Avions d'affaires"};
+	
+	ArrayList<String[]> listPlane = new ArrayList<String[]>();
+	
+	
+	String[][] a = {
+							{"",program[0], phase[5],type[0]},
+							{"",program[1], phase[5],type[3]},
+							{"",program[2], phase[2],type[1]},
+							{"",program[3], phase[3],type[1]},
+							{"",program[4], phase[1],type[2]},
+							}; 
+	listPlane.add(type);
+	return listPlane;
+}
+}

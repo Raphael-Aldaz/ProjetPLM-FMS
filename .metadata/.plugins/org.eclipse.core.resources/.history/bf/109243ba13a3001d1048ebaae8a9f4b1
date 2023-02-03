@@ -1,0 +1,67 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class Pieces {
+	/*public static void displayPieces(ArrayList<String[]> tab) {
+		for(int i =0; i<tab.size(); i++) {
+			System.out.println("---------");
+			
+		}
+		
+	
+	}*/
+	public static void displayPieces(HashMap<Integer, String[]> tab) {
+		//System.out.println(tab.keySet());
+		/*for(int i = 1; i <=tab.size();i++) {
+			System.out.println(Arrays.toString(tab.get(i).get(i-1)));	
+		
+			  
+			}*/
+		/*for(Map.Entry<Integer, ArrayList<String[]>> entry : tab.entrySet()) {
+			Integer key = entry.getKey();
+			ArrayList<String []> value = entry.getValue();
+			String a = null;
+			for(int i = 0; i <value.size();i++) {
+				a =Arrays.toString(value.get(i).get(i-1));	
+			
+				  
+				}
+			
+			System.out.println(key + " " + value);
+		}*/
+		for(Map.Entry<Integer, String[]> entry : tab.entrySet()) {
+			Integer key = entry.getKey();
+			String [] value = entry.getValue();
+			System.out.println("---------");
+			
+				
+				for(String str : value) {
+					
+					System.out.print(key + str);
+					
+			}
+			}
+		
+		
+	}
+	
+	public static ArrayList<String[]> removePiece(ArrayList<String[]> tab, int index){
+		
+		 tab.remove(index - 1);
+		return tab;
+	}
+public static ArrayList<String[]> addPiece(ArrayList<String[]> tab, int index){
+		
+		tab.remove(index - 1);
+		ArrayList<String[]> listUpdated = new ArrayList<>(tab);
+		
+		return listUpdated;
+	}
+	
+	
+	
+
+}

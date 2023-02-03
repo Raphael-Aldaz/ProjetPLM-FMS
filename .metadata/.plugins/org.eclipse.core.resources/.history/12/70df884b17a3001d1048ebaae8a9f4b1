@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class Pieces {
+
+	public static void displayPieces(HashMap<Integer, String[]> tab) {
+
+		 for (Map.Entry<Integer	, String[]> entry : tab.entrySet()) {
+	            int key = entry.getKey();
+	            
+	            String value = Arrays.toString(entry.getValue());
+	            System.out.println("ID: " + key + " : " + value);
+	        }		
+	}
+	
+	public static ArrayList<String[]> removePiece(ArrayList<String[]> tab, int index){
+		
+		 tab.remove(index - 1);
+		return tab;
+	}
+	
+	public static ArrayList<String[]> addPiece(ArrayList<String[]> tab, int index){
+			
+			tab.remove(index - 1);
+			ArrayList<String[]> listUpdated = new ArrayList<>(tab);
+			
+			return listUpdated;
+		}
+	
+	
+	
+
+}
